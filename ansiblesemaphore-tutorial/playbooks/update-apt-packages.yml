@@ -1,23 +1,22 @@
 ---
-# - hosts: all
+- hosts: all
 
-#   become: true
-#   tasks:
-#     - name: update packages
-#       apt:
-#         upgrade: yes
-#         update_cache: yes
-
-- name: Install and Start nginx
-  hosts: all
   become: true
-
   tasks:
-    - name: Install nginx
+    - name: update packages
       apt:
-        name: nginx
-        state: present
-    - name: Start nginx
-      service:
-        name: nginx
-        state: started
+        upgrade: yes
+        update_cache: yes
+# - name: Install and Start nginx
+#   hosts: all
+#   become: true
+
+#   tasks:
+#     - name: Install nginx
+#       apt:
+#         name: nginx
+#         state: present
+#     - name: Start nginx
+#       service:
+#         name: nginx
+#         state: started
